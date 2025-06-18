@@ -22,12 +22,12 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`space-y-3 ${className}`}>
+    <div className={`space-y-2 sm:space-y-3 ${className}`}>
       <div className="flex justify-between items-center">
         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           {label}
         </label>
-        <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">
+        <span className="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">
           {value}{unit}
         </span>
       </div>
@@ -44,8 +44,8 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
         <style jsx>{`
           .slider::-webkit-slider-thumb {
             appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: #3b82f6;
             cursor: pointer;
@@ -59,13 +59,23 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
           }
           .slider::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: #3b82f6;
             cursor: pointer;
             border: 2px solid white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          }
+          @media (max-width: 640px) {
+            .slider::-webkit-slider-thumb {
+              width: 20px;
+              height: 20px;
+            }
+            .slider::-moz-range-thumb {
+              width: 20px;
+              height: 20px;
+            }
           }
         `}</style>
       </div>

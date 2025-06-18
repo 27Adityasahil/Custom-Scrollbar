@@ -29,18 +29,18 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
         />
         <label
           htmlFor={`color-${label.replace(/\s+/g, '-').toLowerCase()}`}
-          className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-400 transition-colors group"
+          className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-400 transition-colors group"
         >
           <div
-            className="w-8 h-8 rounded-md border-2 border-gray-300 dark:border-gray-600 group-hover:border-blue-400 transition-colors shadow-sm"
+            className="w-6 h-6 sm:w-8 sm:h-8 rounded-md border-2 border-gray-300 dark:border-gray-600 group-hover:border-blue-400 transition-colors shadow-sm flex-shrink-0"
             style={{ backgroundColor: value }}
           />
-          <div className="flex-1">
-            <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+          <div className="flex-1 min-w-0">
+            <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
               {value.toUpperCase()}
             </div>
           </div>
-          <Palette className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+          <Palette className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
         </label>
       </div>
     </div>

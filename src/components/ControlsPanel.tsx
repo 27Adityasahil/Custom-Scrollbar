@@ -13,42 +13,36 @@ interface ControlsPanelProps {
   onReset: () => void;
 }
 
-// export const ControlsPanel: React.FC<ControlsPanelProps> = ({
-//   }
-//   settings,
-//   onUpdateSetting,
-//   onReset
-// }) => {
 export const ControlsPanel: React.FC<ControlsPanelProps> = ({
-    settings,
-    onUpdateSetting,
-    onReset
+  settings,
+  onUpdateSetting,
+  onReset
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-4 sm:gap-0">
         <div className="flex items-center gap-2">
-          <Settings className="w-6 h-6 text-blue-500" />
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+          <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" />
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">
             Customization Controls
           </h2>
         </div>
         <button
           onClick={onReset}
-          className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+          className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm sm:text-base"
         >
           <RotateCcw className="w-4 h-4" />
           Reset
         </button>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-6 sm:space-y-8">
         {/* Dimensions Section */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
             Dimensions
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <RangeSlider
               label="Scrollbar Width"
               value={settings.width}
@@ -70,10 +64,10 @@ export const ControlsPanel: React.FC<ControlsPanelProps> = ({
 
         {/* Colors Section */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
             Colors
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <ColorPicker
               label="Track Color"
               value={settings.trackColor}
@@ -99,15 +93,15 @@ export const ControlsPanel: React.FC<ControlsPanelProps> = ({
 
         {/* Orientation Section */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
             Orientation
           </h3>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             {(['vertical', 'horizontal', 'both'] as const).map((orientation) => (
               <button
                 key={orientation}
                 onClick={() => onUpdateSetting('orientation', orientation)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`px-3 sm:px-4 py-2 rounded-lg font-medium transition-all text-sm sm:text-base ${
                   settings.orientation === orientation
                     ? 'bg-blue-500 text-white shadow-md'
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
@@ -120,11 +114,11 @@ export const ControlsPanel: React.FC<ControlsPanelProps> = ({
         </div>
 
         {/* Accessibility Tips */}
-        <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-3 sm:p-4">
           <h3 className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">
             💡 Accessibility Tips
           </h3>
-          <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
+          <ul className="text-xs sm:text-sm text-blue-800 dark:text-blue-200 space-y-1">
             <li>• Ensure sufficient contrast between track and thumb colors</li>
             <li>• Keep scrollbar width at least 12px for touch devices</li>
             <li>• Provide clear visual feedback for hover and active states</li>
