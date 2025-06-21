@@ -93,13 +93,6 @@ function App() {
             <p className="text-gray-600 dark:text-gray-400 mb-2 text-sm sm:text-base">
               Made with ❤️ for developers who care about the details
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-              <span>Cross-browser compatible</span>
-              <span className="hidden sm:inline">•</span>
-              <span>Accessibility focused</span>
-              <span className="hidden sm:inline">•</span>
-              <span>Production ready</span>
-            </div>
           </div>
         </div>
       </div>
