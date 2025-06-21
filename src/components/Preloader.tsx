@@ -10,28 +10,28 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoadComplete }) => {
   const [colorIndex, setColorIndex] = useState(0);
 
   const colors = [
-    '#3b82f6', // blue
-    '#10b981', // emerald
-    '#f59e0b', // amber
-    '#ef4444', // red
-    '#8b5cf6', // violet
-    '#06b6d4', // cyan
-    '#f97316', // orange
-    '#84cc16', // lime
-    '#ec4899', // pink
-    '#6366f1', // indigo
+    '#3b82f6', 
+    '#10b981',
+    '#f59e0b',
+    '#ef4444',
+    '#8b5cf6',
+    '#06b6d4',
+    '#f97316',
+    '#84cc16',
+    '#ec4899',
+    '#6366f1',
   ];
 
   useEffect(() => {
     const duration = 3000; // 3 seconds
-    const interval = 50; // Update every 50ms
+    const interval = 50; // Updating every 50ms
     const increment = 100 / (duration / interval);
 
     const timer = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(onLoadComplete, 500); // Small delay before hiding
+          setTimeout(onLoadComplete, 500); // some delay before hiding
           return 100;
         }
         return prev + increment;
